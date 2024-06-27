@@ -1,4 +1,7 @@
 import numpy as np
+import pandas as pd
+
+from surprise.accuracy import rmse, mae
 
 def get_sample_data(ratings, n_users, n_movies, random_state=0):
     np.random.seed(random_state)
@@ -21,3 +24,27 @@ def get_sample_data(ratings, n_users, n_movies, random_state=0):
     sample = ratings[(ratings['CustId'].isin(users_sample)) & (ratings['MovieId'].isin(movies_sample))]
 
     return sample
+
+def evaluate_baseline_performance(algo, train, test, verbose=True):
+
+    if verbose is True: print('Training the model and making predictions...')
+    algo.fit(train)
+    predictions = algo.test(test)
+
+    if verbose is True: print('Computing RMSE and MAE...')
+    rmse_test = rmse(predictions, verbose=True)
+    mae_test = mae(predictions, verbose=True)
+    
+    if verbose is True: print('\nDone.')
+
+    return rmse_test, mae_test
+
+def test_algorithms(algorithms: dict, train, test, verbose=True):
+    # Dictionary to store the results    
+    results = {}
+    for (name, algo) in algorithms.items():
+        print(f'Evaluating performance for: {name}')
+        rmse_algo, mae_algo = evaluate_baseline_performance(algo, train, test, verbose=verbose)
+        results[name] = [rmse_algo, mae_algo]
+        print('')
+    return pd.DataFrame(results, index=['RMSE', 'MAE']).T.sort_values(by='RMSE').round(4) 
