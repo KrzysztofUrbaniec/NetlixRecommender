@@ -14,7 +14,7 @@ class Metrics:
     def GetTopN(predictions, n=10, minimumRating=4.0):
         topN = defaultdict(list)
 
-        for userID, movieID, actualRating, estimatedRating, _ in predictions:
+        for userID, movieID, _, estimatedRating, _ in predictions:
             if (estimatedRating >= minimumRating):
                 topN[int(userID)].append((int(movieID), estimatedRating))
 
