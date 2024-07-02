@@ -12,8 +12,10 @@ class Data:
 
         self.full_trainset = data.build_full_trainset()
         
+        # Train/test split (75/25; accuracy)
+        self.accuracy_trainset, self.accuracy_testset = train_test_split(data, test_size=0.25, random_state=0)
+
         LOOCV = LeaveOneOut(n_splits=1, random_state=0)
-        
         # LOOCV train/test + antitestset
         for train, test in LOOCV.split(self.data):
             self.LOOCV_train = train
@@ -44,6 +46,12 @@ class Data:
     def get_anti_testset(self):
         return self.anti_testset
     
+    def get_accuracy_trainset(self):
+        return self.accuracy_trainset
+    
+    def get_accuracy_testset(self):
+        return self.accuracy_testset
+    
     def get_n_users(self):
         return self.n_users
     
@@ -52,3 +60,18 @@ class Data:
     
     def get_similarity_baseline_algo(self):
         return self.simsAlgo
+    
+    def get_anti_testset_for_user(self, user_id):
+        trainset = self.full_trainset
+        fill = trainset.global_mean
+        anti_testset = []
+        u = trainset.to_inner_uid(str(user_id))
+        # Select all items user interacted with and
+        # generate a testset using only items the
+        # user has NOT seen (we don't want to recommend
+        # items, that were buyed/watched by the user)
+        user_items = set([j for (j, _) in trainset.ur[u]]) # trainset.ur contains tuples like (item_id, rating)
+        anti_testset += [(trainset.to_raw_uid(u), trainset.to_raw_iid(i), fill) for
+                                 i in trainset.all_items() if
+                                 i not in user_items]
+        return anti_testset
