@@ -1,0 +1,1 @@
+{"rmse": {"n_factors": 125, "n_epochs": 20, "lr_all": 0.005, "reg_all": 0.05}, "mae": {"n_factors": 125, "n_epochs": 20, "lr_all": 0.005, "reg_all": 0.05}}
