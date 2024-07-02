@@ -99,10 +99,13 @@ class MovieSampler:
         Generate a subset of the dataset with a specified number of users and movies, 
         divided into groups based on movie ranks. 
 
+        Note that the number of sampled users may not correspond exactly to the desired
+        number of users if the number of sampled movies is too small. 
+
         Parameters:
         -----------
         ratings : pd.DataFrame
-            DataFrame containing movie ratings with columns ['CustId', 'MovieId', 'Rating', 'Date'].
+            DataFrame containing movie ratings with obligatory columns ['CustId', 'MovieId', 'Rating'].
         n_users : int
             The number of unique users to sample.
         n_movies : int
