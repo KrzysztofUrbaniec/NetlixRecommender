@@ -111,9 +111,11 @@ class MovieSampler:
             The number of groups to divide the movies into based on their rank percentiles.
         random_state : int, optional, default=0
             Random seed for reproducibility.
-        user_weights_s : float, optional, default=1.0
+        zipfs_s : float, optional, default=1.0
             Parameter to control the proportion of samples from groups with the highest number of ratings.
             Higher values result in more samples drawn from these groups.
+        verbose: bool, optional, default=True
+            A boolean flag to indicate whether to print the additional logs.
 
         Returns:
         --------
