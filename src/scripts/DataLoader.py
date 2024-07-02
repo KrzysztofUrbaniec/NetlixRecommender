@@ -33,7 +33,7 @@ class DataLoader:
 
         return dataset
 
-    def getPopularityRanks(self):
+    def get_popularity_ranks(self):
         ratings = defaultdict(int)
         rankings = defaultdict(int)
         with open(self.ratings_filepath, newline='') as csvfile:
@@ -43,7 +43,7 @@ class DataLoader:
                 movieID = int(row[1])
                 ratings[movieID] += 1
         rank = 1
-        for movieID, ratingCount in sorted(ratings.items(), key=lambda x: x[1], reverse=True):
+        for movieID, _ in sorted(ratings.items(), key=lambda x: x[1], reverse=True):
             rankings[movieID] = rank
             rank += 1
         return rankings
