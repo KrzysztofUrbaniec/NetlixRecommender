@@ -20,14 +20,14 @@ The workflow is structured across two main notebooks:
   * Select appropriate recommendation algorithms.
   * Tune model parameters using grid search.
   * Validate models using accuracy metrics such as RMSE and MAE and user-centric metrics like hit rate, diversity, or novelty.
-  * Generate sample recommendations to demonstrate the effectiveness of the selected model.
+  * Generate sample recommendations to assess the effectiveness of the selected model.
 
 ### Other elements: 
 
-**scripts:** Utility functions and classes to facilitate the data processing and analysis. \
+**data:** Samples drawn from the original data using for model training. \
 **models:** Serialized models and parameters. \
-**test:** Basic tests for MovieSampler class. \
-**data:** Samples drawn from the original data using for model training. 
+**scripts:** Utility functions and classes to facilitate the data processing and analysis. \
+**test:** Basic tests for MovieSampler class. 
 
 ### Additional Notes: 
 
