@@ -24,12 +24,12 @@ The workflow is structured across two main notebooks:
 
 ### Other elements: 
 
-scripts: Utility functions and classes to facilitate the data processing and analysis. \
-models: Serialized models and parameters. \
-test: Basic tests for MovieSampler class. \
-data: Samples drawn from the original data using for model training. 
+**scripts:** Utility functions and classes to facilitate the data processing and analysis. \
+**models:** Serialized models and parameters. \
+**test:** Basic tests for MovieSampler class. \
+**data:** Samples drawn from the original data using for model training. 
 
 ### Additional Notes: 
 
-Data Source: The Netflix Prize dataset ([Kaggle](https://www.kaggle.com/datasets/evanschreiner/netflix-movie-ratings?select=Netflix_User_Ratings.csv)) \
-Tools: Python, Numpy, Pandas, Seaborn, surprise
+**Data Source:** The Netflix Prize dataset ([Kaggle](https://www.kaggle.com/datasets/evanschreiner/netflix-movie-ratings?select=Netflix_User_Ratings.csv)) \
+**Tools:** Python, Numpy, Pandas, Seaborn, surprise
