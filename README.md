@@ -24,7 +24,7 @@ The workflow is structured across two main notebooks:
 
 ### Other elements: 
 
-**data:** Samples drawn from the original data using for model training. \
+**data:** Samples drawn from the original data for model training. \
 **models:** Serialized models and parameters. \
 **scripts:** Utility functions and classes to facilitate the data processing and analysis. \
 **test:** Basic tests for MovieSampler class. 
