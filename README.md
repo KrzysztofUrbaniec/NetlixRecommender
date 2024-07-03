@@ -15,7 +15,7 @@ The workflow is structured across two main notebooks:
   * Sample data to create representative subsets for model development and validation.
 
 **Modeling.ipynb**
-- **Objective:** Implement and evaluate a simple recommendation model.
+- **Objective:** Implement and evaluate the model.
 - **Activities:**
   * Select appropriate recommendation algorithms.
   * Tune model parameters using grid search.
