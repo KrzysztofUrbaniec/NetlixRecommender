@@ -1,3 +1,5 @@
+'''This module provides a convenience class, which prepares the dataset for use with surprise library and allows to easily access created attributes. '''
+
 import numpy as np
 
 from surprise.model_selection import train_test_split
@@ -7,9 +9,8 @@ from surprise import KNNBaseline
 class Data:
 
     def __init__(self, data):
+        # Data is an instance of surprise.DatasetAutoFolds
         self.data = data
-        # Data is rankings
-
         self.full_trainset = data.build_full_trainset()
         
         # Train/test split (75/25; accuracy)

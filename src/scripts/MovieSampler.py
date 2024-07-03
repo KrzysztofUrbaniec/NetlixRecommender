@@ -1,3 +1,5 @@
+'''This module provides a class designed for sampling users and movies from a dataset.'''
+
 import numpy as np
 import pandas as pd
 

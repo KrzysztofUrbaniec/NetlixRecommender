@@ -1,3 +1,5 @@
+'''This module provides a class used for loading data in a format required by surprise library.'''
+
 import csv
 
 from collections import defaultdict

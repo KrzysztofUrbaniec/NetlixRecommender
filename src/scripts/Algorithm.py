@@ -1,3 +1,5 @@
+'''This module provides a class designed to facilitate training and validation of a model.'''
+
 from src.scripts.Metrics import Metrics
 
 class Algorithm:

@@ -1,3 +1,5 @@
+'''This module provies basic metrics used for model evaluation.'''
+
 import itertools
 
 from surprise import accuracy
