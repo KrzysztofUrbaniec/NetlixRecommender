@@ -10,17 +10,17 @@ The workflow is structured across two main notebooks:
 Exploration.ipynb \
     Objective: Perform data exploration and preprocessing to understand the characteristics and distributions within the Netflix Prize dataset. \
     Activities: \
-    Develop an approach to handle large dataset effectively. \
-    Analyze data distributions, such as movie ratings and movie popularity. \
-    Sample data to create representative subsets for model development and validation. 
+    - Develop an approach to handle large dataset effectively. 
+    - Analyze data distributions, such as movie ratings and movie popularity. 
+    - Sample data to create representative subsets for model development and validation. 
 
 Modeling.ipynb \
     Objective: Implement and evaluate a simple recommendation model. \
     Activities: \
-    Select appropriate recommendation algorithms. \
-    Tune model parameters using grid search. \
-    Validate models using accuracy metrics such as RMSE and MAE and user-centric metric like hit rate, diversity or novelty. \
-    Generate sample recommendations to demonstrate the effectiveness of the selected model. 
+    - Select appropriate recommendation algorithms. 
+    - Tune model parameters using grid search. 
+    - Validate models using accuracy metrics such as RMSE and MAE and user-centric metric like hit rate, diversity or novelty. 
+    - Generate sample recommendations to demonstrate the effectiveness of the selected model. 
 
 ### Other elements: 
 
